@@ -1,0 +1,105 @@
+/* Duy Anh Nguyen
+Nov. 14
+Stories-creastor
+You give this program different words and sentences and it turns it into a different random story everytime */
+
+#include <iostream>
+#include <windows.h>
+#include <time.h>
+#include "colours.h"
+using namespace std;
+
+int main()
+{
+	int i;               // Random generator
+
+	// Seed the random number generator use the timer
+	srand((unsigned)time(NULL));
+	for (i = 0; i<rand(); i++)
+		rand();
+
+	// Start line
+	text_colour(f_blue, b_black);
+	switch (rand() % 4 + 1)
+	{
+	case 1: cout << "Once upon a time, there was a "; break;
+	case 2: cout << "One winter day, there was a "; break;
+	case 3: cout << "On a summer day,  there was a "; break;
+	case 4: cout << "On a sunny day,  there was a "; break;
+	} // Switch start line
+
+	// Part 1
+	text_colour(f_red, b_black);
+	switch (rand() % 4 + 1)
+	{
+	case 1: cout << "cat "; break;
+	case 2: cout << "Mickey Mouse "; break;
+	case 3: cout << "ghost "; break;
+	case 4: cout << "rainbow "; break;
+	} // Switch part 1
+
+	// Part 2
+	text_colour(f_white, b_black);
+	cout << "who wants to ";
+
+	text_colour(f_dyellow, b_black);
+	switch (rand() % 4 + 1)
+	{
+	case 1: cout << "go snowboarding in "; break;
+	case 2: cout << "go for a vacation to "; break;
+	case 3: cout << "go cycling to "; break;
+	case 4: cout << "run to "; break;
+	} // Switch part 2
+
+	// Part 3
+	text_colour(f_green, b_black);
+	switch (rand() % 4 + 1)
+	{
+	case 1: cout << "Asia. "; break;
+	case 2: cout << "Africa. "; break;
+	case 3: cout << "Europe. "; break;
+	case 4: cout << "America. "; break;
+	} // Switch part 3
+
+	// Part 4
+	text_colour(f_white, b_black);
+	cout << "Unfortunately, there was a big tornado so he decide to ";
+
+	text_colour(f_yellow, b_black);
+	switch (rand() % 4 + 1)
+	{
+	case 1: cout << "take the Zeus's airline because it's been said that this airline is the safest and could take you to heaven (get it? safety-heaven). "; break;
+	case 2: cout << "stay and watch people fly. "; break;
+	case 3: cout << "stay to watch his neighbour fly. "; break;
+	case 4: cout << "stay to predict his future. "; break;
+	} // Switch part 4
+
+	// Part 5
+	text_colour(f_dblue, b_black);
+	switch (rand() % 4 + 1)
+	{
+	case 1: cout << "He successfuly conpleted his wish "; break;
+	case 2: cout << "His wish came true "; break;
+	case 3: cout << "He did it "; break;
+	case 4: cout << "What he wanted came true "; break;
+	} // Switch part 5
+
+	// Part 6
+	text_colour(f_white, b_black);
+	cout << "and ";
+
+	text_colour(f_cyan, b_black);
+	switch (rand() % 4 + 1)
+	{
+	case 1: cout << "was never seen again. "; break;
+	case 2: cout << "he was forever in the missing list. "; break;
+	case 3: cout << "he was remembered as one of the victim in the incident. "; break;
+	case 4: cout << "he never coming back. "; break;
+	} // Switch part 6
+
+	// End
+	text_colour(f_white, b_black);
+	cout << "The End. " << endl;
+
+	return 0;
+} // Main
