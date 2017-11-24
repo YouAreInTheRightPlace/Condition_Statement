@@ -1,0 +1,167 @@
+/* DUy Anh Nguyen
+Nov. 7
+Cheque
+This program was written to asks the user to enter 4 digits then this program print out "Cheque" for that amount of money.*/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int money;                            // User enter 4 digits for money
+	int copy;                             // Temperary value
+	int thousand;                         // Thousand
+	int hundred;                          // Hundred
+	int ten;                              // Ten
+	int one;                              // 0-9 value
+
+										  // Get info
+	cout << "What is the cheque amount ($1 - $9999)? $";
+	cin >> money;
+
+	// Check money
+	if (money >= 10000 || money <= -1)
+	{
+		cout << "Get out!" << endl;
+	} // If
+
+	else
+	{
+		// Break info
+		thousand = money / 1000;
+		copy = money - (thousand * 1000);
+		hundred = copy / 100;
+		copy = copy - (hundred * 100);
+		ten = copy / 10;
+		copy = copy - (ten * 10);
+		one = copy;
+
+		// Print
+		cout << "=============================================" << endl;
+		cout << "Pay to the order of R. Scott       $" << money << endl;
+
+		// Print thousand
+		switch (thousand)
+		{
+		case 1: cout << "One thousand "; break;
+		case 2: cout << "Two thousand "; break;
+		case 3: cout << "Three thousand "; break;
+		case 4: cout << "Four thousand "; break;
+		case 5: cout << "Five thousand "; break;
+		case 6: cout << "Six thousand "; break;
+		case 7: cout << "Seven thousand "; break;
+		case 8: cout << "Eight thousand "; break;
+		case 9: cout << "Nine thousand "; break;
+		} // Thousands
+
+		  // Print hundred
+		switch (hundred)
+		{
+		case 1: cout << "One hundred "; break;
+		case 2: cout << "Two hundred "; break;
+		case 3: cout << "Three hundred "; break;
+		case 4: cout << "Four hundred "; break;
+		case 5: cout << "Five hundred "; break;
+		case 6: cout << "Six hundred "; break;
+		case 7: cout << "Seven hundred "; break;
+		case 8: cout << "Eight hundred "; break;
+		case 9: cout << "Nine hundred "; break;
+		} // Hundred
+
+		  //Print ten
+		if (ten >= 1 && one == 0)
+		{
+			switch (ten)
+			{
+			case 1: cout << "Ten "; break;
+			case 2: cout << "Twenty "; break;
+			case 3: cout << "Thirty "; break;
+			case 4: cout << "Fourty "; break;
+			case 5: cout << "Fifty "; break;
+			case 6: cout << "Sixty "; break;
+			case 7: cout << "Seventy "; break;
+			case 8: cout << "Eighty "; break;
+			case 9: cout << "Ninety "; break;
+			} // Ten alone
+		} // If
+
+		else if (ten == 0 && one >= 1)
+		{
+			switch (one)
+			{
+			case 1: cout << "One "; break;
+			case 2: cout << "Two "; break;
+			case 3: cout << "Three "; break;
+			case 4: cout << "Four "; break;
+			case 5: cout << "Five "; break;
+			case 6: cout << "Six "; break;
+			case 7: cout << "Seven "; break;
+			case 8: cout << "Eight "; break;
+			case 9: cout << "Nine "; break;
+			} // One alone
+		} // If
+
+		else if (ten == 1 && one == 1)
+		{
+			switch (one)
+			{
+			case 1: cout << "Eleven "; break;
+			case 2: cout << "Twelve "; break;
+			case 3: cout << "Thirteen "; break;
+			case 4: cout << "Fourteen "; break;
+			case 5: cout << "Fifteen "; break;
+			case 6: cout << "Sixteen "; break;
+			case 7: cout << "Seventeen "; break;
+			case 8: cout << "Eighteen "; break;
+			case 9: cout << "Nineteen "; break;
+			}
+		} // If
+
+		else if (ten >= 2 && one >= 1)
+		{
+			// Print ten
+			switch (ten)
+			{
+			case 2: cout << "Twenty-"; break;
+			case 3: cout << "Thirty-"; break;
+			case 4: cout << "Fourty-"; break;
+			case 5: cout << "Fifty-"; break;
+			case 6: cout << "Sixty-"; break;
+			case 7: cout << "Seventy-"; break;
+			case 8: cout << "Eighty-"; break;
+			case 9: cout << "Ninety-"; break;
+			} // Ten
+
+			  // Print one
+			switch (one)
+			{
+			case 1: cout << "One "; break;
+			case 2: cout << "Two "; break;
+			case 3: cout << "Three "; break;
+			case 4: cout << "Four "; break;
+			case 5: cout << "Five "; break;
+			case 6: cout << "Six "; break;
+			case 7: cout << "Seven "; break;
+			case 8: cout << "Eight "; break;
+			case 9: cout << "Nine "; break;
+			} // One
+		} // If
+
+		else if (money == 0)
+		{
+			cout << "Zero ";
+		} // If
+
+		  // Print dollars/dollar
+		if (money == 1)
+			cout << "dollar" << endl;
+		else
+			cout << "dollars" << endl;
+
+		// Print end
+		cout << "                                   I. M. Rich" << endl;
+		cout << "=============================================" << endl;
+	} // Else
+
+	return 0;
+} // Main
