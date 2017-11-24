@@ -1,0 +1,182 @@
+/* Duy Anh Nguyen
+Nov.15
+Gamble-Donation
+This program was written to generate random for gamble. It ask the user how much $ the want to gamble and their guess.
++If user win, they win 10x their bet.
++If user lose, they lost the bet money time difference between their guess and correct answer. */
+
+#include <iostream>
+#include <windows.h>
+#include <time.h>
+#include "colours.h"
+using namespace std;
+
+int main()
+{
+	int i;                                   // Random generator
+	int bet;                                 // User bet money
+	int guess;                               // User guess number
+	int win;                                 // The money user win if got it right
+	int lost;                                // THe money user lose if got it right
+	int right;                               // The right answer
+	int dice_1, dice_2;                      // Dice 1 and 2
+	int total_dice;                          // Total dice role
+
+											 // Seed the random number generator use the timer
+	srand((unsigned)time(NULL));
+	for (i = 0; i<rand(); i++)
+		rand();
+
+	// Gernerate random
+	dice_1 = rand() % 6 + 1;
+	dice_2 = rand() % 6 + 1;
+
+	// Get info
+	text_colour(f_yellow, b_black);
+	cout << "Pleace Enter the amount of money you want to bet? ($1 - $1000) ";
+	text_colour(f_cyan, b_black);
+	cout << "$";
+	cin >> bet;
+	text_colour(f_yellow, b_black);
+	cout << "What do you guess the dice role will be? (2-12) ";
+	text_colour(f_cyan, b_black);
+	cin >> guess;
+	cout << endl;
+	// Check bet input
+	text_colour(f_dmagenta, b_black);
+	if (bet > 1000)
+		cout << "You bet too much but ok!" << endl;
+
+	text_colour(f_white, b_black);
+	cout << "for your $" << bet << ", the role is " << endl;
+
+	// Dice role
+	text_colour(f_blue, b_black);
+
+	switch (dice_1)
+	{
+	case 1: cout << "===========" << endl;
+		cout << "|         |" << endl;
+		cout << "|    1    |" << endl;
+		cout << "|         |" << endl;
+		cout << "===========" << endl;
+		break;
+
+	case 2: cout << "===========" << endl;
+		cout << "| 2       |" << endl;
+		cout << "|         |" << endl;
+		cout << "|       2 |" << endl;
+		cout << "===========" << endl;
+		break;
+
+	case 3: cout << "===========" << endl;
+		cout << "| 3       |" << endl;
+		cout << "|    3    |" << endl;
+		cout << "|       3 |" << endl;
+		cout << "===========" << endl;
+		break;
+
+	case 4: cout << "===========" << endl;
+		cout << "| 4     4 |" << endl;
+		cout << "|         |" << endl;
+		cout << "| 4     4 |" << endl;
+		cout << "===========" << endl;
+		break;
+
+	case 5: cout << "===========" << endl;
+		cout << "| 5     5 |" << endl;
+		cout << "|    5    |" << endl;
+		cout << "| 5     5 |" << endl;
+		cout << "===========" << endl;
+		break;
+
+	case 6: cout << "===========" << endl;
+		cout << "| 6     6 |" << endl;
+		cout << "| 6     6 |" << endl;
+		cout << "| 6     6 |" << endl;
+		cout << "===========" << endl;
+		break;
+	} // Dice 1
+
+	switch (dice_2)
+	{
+	case 1: cout << "===========" << endl;
+		cout << "|         |" << endl;
+		cout << "|    1    |" << endl;
+		cout << "|         |" << endl;
+		cout << "===========" << endl;
+		break;
+
+	case 2: cout << "===========" << endl;
+		cout << "| 2       |" << endl;
+		cout << "|         |" << endl;
+		cout << "|       2 |" << endl;
+		cout << "===========" << endl;
+		break;
+
+	case 3: cout << "===========" << endl;
+		cout << "| 3       |" << endl;
+		cout << "|    3    |" << endl;
+		cout << "|       3 |" << endl;
+		cout << "===========" << endl;
+		break;
+
+	case 4: cout << "===========" << endl;
+		cout << "| 4     4 |" << endl;
+		cout << "|         |" << endl;
+		cout << "| 4     4 |" << endl;
+		cout << "===========" << endl;
+		break;
+
+	case 5: cout << "===========" << endl;
+		cout << "| 5     5 |" << endl;
+		cout << "|    5    |" << endl;
+		cout << "| 5     5 |" << endl;
+		cout << "===========" << endl;
+		break;
+
+	case 6: cout << "===========" << endl;
+		cout << "| 6     6 |" << endl;
+		cout << "| 6     6 |" << endl;
+		cout << "| 6     6 |" << endl;
+		cout << "===========" << endl;
+		break;
+	} // Dice 2
+
+	total_dice = dice_1 + dice_2;
+	// Check
+	if (guess == total_dice)
+	{
+		text_colour(f_green, b_black);
+		win = bet * 10;
+
+		cout << "Congratulation!!! You were correct." << endl;
+		cout << "You win $" << bet << " x 10 = $" << win << endl;
+	} // If
+
+	else
+	{
+		text_colour(f_red, b_black);
+
+		if (total_dice > guess)
+		{
+			lost = (total_dice - guess) * bet;
+			cout << "You were wrong." << endl;
+			cout << "You lost (" << total_dice << " - " << guess << ") x $" << bet << " = $" << lost << endl;
+			cout << "Thanks for your donation!" << endl;
+		} // If
+
+		else
+		{
+			lost = (guess - total_dice) * bet;
+			cout << "You were wrong." << endl;
+			cout << "You lost (" << guess << " - " << total_dice << ") x $" << bet << " = $" << lost << endl;
+			cout << "Thanks you for your donation." << endl;
+		} // Else
+	} // Else
+
+	  // Retset coor
+	text_colour(f_gray, b_black);
+
+	return 0;
+} // Main
