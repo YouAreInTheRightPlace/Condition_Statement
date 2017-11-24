@@ -1,0 +1,80 @@
+/* Duy Anh Nguyen
+Nov.3
+Smart-ticket
+This program was written to help calculate the speed ticket. It first check if the user speeding or not then calculate base on the speed.
+If speeding over 30km/hr above the speed limit there is a different price and if speeding under 30km/hr above the speed limit there are a different price.*/
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+	float speed_lim;                             // Speed limit
+	float d_speed;                               // Driver speed
+	float drive_limit;                           // The differences of speed between the over speed and speed limit
+	char dan_zone;                               // Is the driver speeding in danger-zone
+	float ticket_cost;                           // Cost of the speeding ticket
+
+    // Get info
+	cout << "What is the speed limit? ";
+	cin >> speed_lim;
+
+	cout << "How fast was the driver going? ";
+	cin >> d_speed;
+
+	// Calculate between over speed and speed limit
+	drive_limit = d_speed - speed_lim;
+
+	// Check 
+	if (d_speed <= speed_lim)
+		cout << "You were not speeding! " << endl;
+
+	else
+	{
+		if (drive_limit <= 30)
+		{
+			ticket_cost = drive_limit*7.70 + 100;
+
+			cout << "You were speeding. Were this happen in school or construction zone ? (Y / N) ";
+			cin >> dan_zone;
+			if (dan_zone == 'n' || dan_zone == 'N')
+			{
+				cout << "The ticket for going " << d_speed << "km/hr in a " << speed_lim << "km/hr not in school or construction zone is $";
+				cout << fixed << setprecision(2) << ticket_cost << endl;
+				cout << "Since (" << d_speed << " - " << speed_lim << ") x $7.70 + 100 = $" << ticket_cost << endl;
+			} // If
+
+			else
+			{
+				ticket_cost = ticket_cost * 2;
+				cout << "The ticket for going " << d_speed << "km/hr in a " << speed_lim << "km/hr in school or construction zone is $";
+				cout << fixed << setprecision(2) << ticket_cost << endl;
+				cout << "Since (" << d_speed << " - " << speed_lim << ") x $7.70 + 100 (Double) = $" << ticket_cost << endl;
+			} // Else
+		} // If
+
+		else
+		{
+			ticket_cost = (drive_limit*12.50) + 200;
+
+			cout << "You were speeding. Were this happen in school or construction zone? (Y / N) ";
+			cin >> dan_zone;
+			if (dan_zone == 'n' || dan_zone == 'N')
+			{
+				cout << "The ticket for going " << d_speed << "km/hr in a " << speed_lim << "km/hr not in school or construction zone is $";
+				cout << fixed << setprecision(2) << ticket_cost << endl;
+				cout << "Since (" << d_speed << " - " << speed_lim << ") x $12.50 + 200 = $" << ticket_cost << endl;
+			} // IF
+			else
+			{
+				ticket_cost = ticket_cost * 2;
+				cout << "The ticket for going " << d_speed << "km/hr in a " << speed_lim << "km/hr in school or construction zone is $";
+				cout << fixed << setprecision(2) << ticket_cost << endl;
+				cout << "Since (" << d_speed << " - " << speed_lim << ") x $12.50 + 200 (Double) = $" << ticket_cost << endl;
+			} // Else
+		} // Else
+	} // Top else
+
+	return 0;
+} // Main
