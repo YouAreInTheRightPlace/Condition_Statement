@@ -1,0 +1,134 @@
+/* Duy Anh Nguyen
+Nov. 16
+High-Maze
+This program was written to help you pass the high-school. It first identifing*/
+
+#include <iostream>
+#include <windows.h>
+#include <time.h>
+#include "colours.h"
+using namespace std;
+
+int main()
+{
+	char anw;                             // The answers
+	int right = 0;                        // Right answers
+	int i;                                // Generate random number
+
+	// Seed the random number generator use the timer
+	srand((unsigned)time(NULL));
+	for (i = 0; i<rand(); i++)
+		rand();
+
+	// Introduce
+	text_colour(f_cyan, b_black);
+	cout << "Are you a high-school student? (Y/N) ";
+	cin >> anw;
+	
+	if (anw == 'n' || anw == 'N')
+	{
+		text_colour(f_green, b_black);
+		cout << "You already pass this maze!" << endl;
+		cout << "Go enjoy your life..." << endl;
+	} // If
+
+	else
+	{
+		text_colour(f_yellow, b_black);
+		cout << "Welcome to the life of hell elo!" << endl;
+		text_colour(f_dyellow, b_black);
+		cout << "Are You failing your classes? (Y/N) ";
+		cin >> anw;
+		{
+			if (anw == 'y' || anw == 'Y')
+			{
+				text_colour(f_blue, b_black);
+				cout << "You're in the right place! This is a school simulator for failure like YOU!" << endl;
+			}
+			else
+				text_colour(f_dblue, b_black);
+				cout << "Well now you a failure! Enjoy the game..." << endl;
+		} // Introduce
+
+		text_colour(f_white, b_black);
+		cout << "It's the last day of school." << endl;
+		cout << "In order to get out of this hell elo, there is one last test you have to do!" << endl;
+		cout << "This test is about you! You have to answer honestly about what you good at in order to pass the school!" << endl;
+		cout << "Or else stay for another year..." << endl;
+		cout << endl;
+
+		//QUestion 1
+		text_colour(f_dcyan, b_black);
+		cout << "Are you good at math? (Y/N) ";
+		cin >> anw;
+
+		if (rand() % 2 == 1)
+		{
+			text_colour(f_red, b_black);
+			cout << "You're wrong!" << endl;
+			cout << "You didn't even got through the first one! Good luck another year!" << endl;
+		} // If
+
+		else
+		{
+			text_colour(f_green, b_black);
+			cout << "You're right" << endl;
+
+			// Question 2
+			text_colour(f_dcyan, b_black);
+			cout << "Are you good at Science? (Y/N) ";
+			cin >> anw;
+
+			if (rand() % 2 == 1)
+			{
+				text_colour(f_red, b_black);
+				cout << "You're wrong!" << endl;
+				cout << "You got 25% through this maze; however, still have to stay for another year!" << endl;
+			} // If
+			else
+			{
+				text_colour(f_green, b_black);
+				cout << "You're right!" << endl;
+
+				// Question 3
+				text_colour(f_dcyan, b_black);
+				cout << "Are you good at Social Studies? (Y/N) ";
+				cin >> anw;
+				if (rand() % 2 == 1)
+				{
+					text_colour(f_red, b_black);
+					cout << "You're wrong!" << endl;
+					cout << "You got 50% through this maze; however, still have to stay for another year!" << endl;
+				} // If
+				else
+				{
+					text_colour(f_green, b_black);
+					cout << "You're right!" << endl;
+
+					// QUestion 4
+					text_colour(f_dcyan, b_black);
+					cout << "Are you good at Physical Education? (Y/N) ";
+					cin >> anw;
+					if (rand() % 2 == 1)
+					{
+						text_colour(f_red, b_black);
+						cout << "You're wrong!";
+						cout << "You got 75% through this maze; however, till have to stay another year!" << endl;
+					} // If
+					else
+					{
+						text_colour(f_green, b_black);
+						cout << "You're right!" << endl;
+						cout << "Congratulation! You no longer in high-school..." << endl;
+						cout << "Mission success!" << endl;
+					} // Else
+				} // Question 3 else
+			} // Question 2 else
+		} // Question 1 else
+	} // Top else
+
+	// Return colour
+	text_colour(f_gray, b_black);
+
+	return 0;
+} // Main
