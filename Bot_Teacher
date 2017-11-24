@@ -1,0 +1,307 @@
+/* Duy Anh Nguyen
+Nov.2
+Teacher-replacement
+This program was written to help school save monney by replace the real teach with program that are 100% stupid-er than 
+the original.*/
+
+#include <iostream>
+#include <iomanip>
+#include <time.h>
+#include <windows.h>
+#include "colours.h"
+using namespace std;
+
+int main()
+{
+	int num1, num2;                   // The 2 random numbers
+	int correct;                      // Correct answer for the question
+	int user_an;                      // User's answer
+	int num_right = 0;                // Number of user correct answers
+	float percent;                    // User's percentage score
+	char level;                       // Level of difficulty. (E)-Easy,(M)Medium, (H)Hard, and (F)Favoni-esque!
+	int i;                            // Loop counter
+	int max_num;                      // Maximum value for the level of difficulty
+
+	// Seed the random number generator use the timer
+	srand((unsigned)time(NULL));
+	for (i = 0; i < rand(); i++)
+		rand();
+
+	// Get info
+	text_colour(f_white, b_black);
+	cout << "How smart are you? " << endl;
+	cout << "Please chose a level! ";
+	text_colour(f_green, b_black);
+	cout << "(E)Easy, ";
+	text_colour(f_yellow, b_black);
+	cout << "(M)Medium, ";
+	text_colour(f_red, b_black);
+	cout << "(H)Hard, ";
+	cout << "(F)Favoni-esque! ";
+	text_colour(f_white, b_black);
+	cin >> level;
+
+	// Check levels
+	if (level == 'e' || level == 'E')
+		max_num = 10;
+	else if (level == 'm' || level == 'M')
+		max_num = 25;
+	else if (level == 'h' || level == 'H')
+		max_num = 100;
+	else
+		max_num = 1000;
+
+	// Random number
+	num1 = rand() % max_num + 1;
+	num2 = rand() % max_num + 1;
+
+	// Ask Addition question                                                      // Addition
+	text_colour(f_white, b_black);
+	cout << "What is ";
+	text_colour(f_blue, b_black);
+	cout << num1 << " + " << num2 << " = ";
+	text_colour(f_white, b_black);
+	cin >> user_an;
+
+	// Check addition question answer
+	correct = num1 + num2;
+
+	if (user_an == correct)
+	{
+		text_colour(f_green, b_black);
+		cout << "You are CORRECT!!! " << endl;
+		num_right++;
+	}
+
+	else
+	{
+		text_colour(f_red, b_black);
+		cout << "You are WRONG ==> " << num1 << " + " << num2 << " = " << correct << endl;
+	}
+
+	// Random number
+	num1 = rand() % max_num + 1;
+	num2 = rand() % max_num + 1;
+
+	// Ask subtraction question                                                   // Subtraction
+	text_colour(f_white, b_black);
+	cout << "What is ";
+	text_colour(f_blue, b_black);
+	cout << num1 << " - " << num2 << " = ";
+	text_colour(f_white, b_black);
+	cin >> user_an;
+
+	// Check subtraction question answer
+	correct = num1 - num2;
+
+	if (user_an == correct)
+	{
+		text_colour(f_green, b_black);
+		cout << "You are CORRECT!!! " << endl;
+		num_right++;
+	}
+
+	else
+	{
+		text_colour(f_red, b_black);
+		cout << "You are WRONG ==> " << num1 << " - " << num2 << " = " << correct << endl;
+	}
+
+	// Random number
+	num1 = rand() % max_num + 1;
+	num2 = rand() % max_num + 1;
+
+	// Ask subtraction question                                                   // Subtraction
+	text_colour(f_white, b_black);
+	cout << "What is ";
+	text_colour(f_blue, b_black);
+	cout << num1 << " - " << num2 << " = ";
+	text_colour(f_white, b_black);
+	cin >> user_an;
+
+	// Check subtraction question answer
+	correct = num1 - num2;
+
+	if (user_an == correct)
+	{
+		text_colour(f_green, b_black);
+		cout << "You are CORRECT!!! " << endl;
+		num_right++;
+	}
+
+	else
+	{
+		text_colour(f_red, b_black);
+		cout << "You are WRONG ==> " << num1 << " - " << num2 << " = " << correct << endl;
+	}
+
+	// Random number
+	num1 = rand() % max_num + 1;
+	num2 = rand() % max_num + 1;
+
+	// Ask muliplycation question                                                 // Multiplycation
+	text_colour(f_white, b_black);
+	cout << "What is ";
+	text_colour(f_blue, b_black);
+	cout << num1 << " x " << num2 << " = ";
+	text_colour(f_white, b_black);
+	cin >> user_an;
+
+	// Check muliplycation question answer
+	correct = num1 * num2;
+
+	if (user_an == correct)
+	{
+		text_colour(f_green, b_black);
+		cout << "You are CORRECT!!! " << endl;
+		num_right++;
+	}
+
+	else
+	{
+		text_colour(f_red, b_black);
+		cout << "You are WRONG ==> " << num1 << " x " << num2 << " = " << correct << endl;
+	}
+
+	// Random number
+	num1 = rand() % max_num + 1;
+	num2 = rand() % max_num + 1;
+
+	// Ask divition question                                                      // Division
+	text_colour(f_white, b_black);
+	cout << "What is ";
+	text_colour(f_blue, b_black);
+	cout << num1 << " : " << num2 << " = ";
+	text_colour(f_white, b_black);
+	cin >> user_an;
+
+	// Check division question answer
+	correct = num1 / num2;
+
+	if (user_an == correct)
+	{
+		text_colour(f_green, b_black);
+		cout << "You are CORRECT!!! " << endl;
+		num_right++;
+	}
+
+	else
+	{
+		text_colour(f_red, b_black);
+		cout << "You are WRONG ==> " << num1 << " : " << num2 << " = " << correct << endl;
+	}
+
+	// Random number
+	num1 = rand() % max_num + 1;
+	num2 = rand() % max_num + 1;
+
+	// Ask divition question                                                      // Division
+	text_colour(f_white, b_black);
+	cout << "What is ";
+	text_colour(f_blue, b_black);
+	cout << num1 << " : " << num2 << " = ";
+	text_colour(f_white, b_black);
+	cin >> user_an;
+
+	// Check division question answer
+	correct = num1 / num2;
+
+	if (user_an == correct)
+	{
+		text_colour(f_green, b_black);
+		cout << "You are CORRECT!!! " << endl;
+		num_right++;
+	}
+
+	else
+	{
+		text_colour(f_red, b_black);
+		cout << "You are WRONG ==> " << num1 << " : " << num2 << " = " << correct << endl;
+	}
+
+	// Random number
+	num1 = rand() % max_num + 1;
+	num2 = rand() % max_num + 1;
+
+	// Ask remainder question                                                     // Remainder
+	text_colour(f_white, b_black);
+	cout << "What is the remainder of ";
+	text_colour(f_yellow, b_black);
+	cout << num1 << " divide " << num2 << " = ";
+	text_colour(f_white, b_black);
+	cin >> user_an;
+
+	// Check remainder question answer
+	correct = num1 % num2;
+
+	if (user_an == correct)
+	{
+		text_colour(f_green, b_black);
+		cout << "You are CORRECT!!! " << endl;
+		num_right++;
+	}
+
+	else
+	{
+		text_colour(f_red, b_black);
+		cout << "You are WRONG ==> " << num1 << " % " << num2 << " = " <<
+			correct << endl;
+	}
+
+	// Random number
+	num1 = rand() % max_num + 1;
+	num2 = rand() % max_num + 1;
+
+	// Ask remainder question                                                     // Remainder
+	text_colour(f_white, b_black);
+	cout << "What is the remainder of ";
+	text_colour(f_yellow, b_black);
+	cout << num1 << " divide " << num2 << " = ";
+	text_colour(f_white, b_black);
+	cin >> user_an;
+
+	// Check remainder question answer
+	correct = num1 % num2;
+
+	if (user_an == correct)
+	{
+		text_colour(f_green, b_black);
+		cout << "You are CORRECT!!! " << endl;
+		num_right++;
+	}
+
+	else
+	{
+		text_colour(f_red, b_black);
+		cout << "You are WRONG ==> " << num1 << " % " << num2 << " = " << correct << endl;
+	}
+
+	// Percentage calculation
+	percent = (num_right * 100.0) / 8.0;
+
+	// Print result
+	text_colour(f_green, b_black);
+	cout << "Overall, you got " << num_right << " out of 8 correct for a percentage of ";
+	cout << fixed << setprecision(1) << percent << "%" << endl;
+
+	// Rating
+	text_colour(f_cyan, b_black);
+	if (percent <= 49)
+	{
+		cout << "Congratulation! You're failing. " << endl;
+		cout << "Your teacher is waiting for you after this class. Which is now me! Not Mr.Scott." << endl;
+	} // If
+	else if (percent <= 59)
+		cout << "You Pass! (Barely). I'm proud of your work! (Barely)." << endl;
+	else if (percent <= 84)
+		cout << "You've pass my class (safe-zone)! What a genius..." << endl;
+	else if (percent <= 99)
+		cout << "Unstoppable! Please stop because I can't catch you!" << endl;
+	else if (percent == 100)
+		cout << "God-like! What a nerd, get out!" << endl;
+
+	// Return text colour
+	text_colour(f_gray, b_black);
+
+	return 0;
+} // Main
